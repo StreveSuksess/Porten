@@ -1,0 +1,661 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font: 14px/18px Verdana, sans-serif;
+}
+
+code, kbd, pre, samp, tt, var {
+  font: 14px/18px Consolas, "Courier New", monospace;
+}
+
+body, optgroup {
+  color: #000;
+  background: #fff;
+}
+
+body, code, dl, dd, form, pre {
+  margin: 0;
+}
+
+a:link, a:visited, ins {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:link img, a:visited img, object, fieldset, abbr, acronym {
+  border: none;
+}
+
+sub, sup {
+  position: relative;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+sub {
+  top: 5px;
+  vertical-align: middle;
+}
+
+sup {
+  top: -2px;
+  margin-top: -11px;
+}
+
+abbr, acronym {
+  cursor: help;
+  border-bottom: 1px dotted #999;
+}
+
+address, cite, dfn {
+  font-style: normal;
+}
+
+code, pre {
+  white-space: pre-wrap;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+td, th, textarea {
+  vertical-align: top;
+}
+
+input, select, button {
+  overflow: visible;
+  vertical-align: middle;
+}
+
+legend {
+  color: #000;
+  margin: 0 0 -2px;
+  padding: 0;
+}
+
+li {
+  display: block;
+  list-style: none;
+}
+
+optgroup option {
+  padding-left: 22px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+caption, th {
+  text-align: left;
+}
+
+td, th {
+  padding: 0;
+}
+
+address, blockquote, h1, h2, h3, h4, h5, h6, fieldset, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+th, h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+q {
+  quotes: "«" "»" "„" "“";
+}
+
+q:after {
+  content: "»";
+}
+
+q:before {
+  content: "«";
+}
+
+q > q:after {
+  content: "“";
+}
+
+q > q:before {
+  content: "„";
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+a {
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  height: 80px;
+  width: 100%;
+  background-color: #0F0F0F;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1200px) {
+  .header__inner {
+    padding: 0 20px;
+    align-items: center;
+  }
+}
+
+.header__logo__img {
+  position: relative;
+  height: 80px;
+}
+.header__logo__img img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    display: none;
+  }
+  .nav.show {
+    display: flex;
+    width: 110%;
+    position: absolute;
+    left: -10px;
+    top: 80px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.nav_list {
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .nav_list {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.nav_link {
+  display: inline-block;
+  padding: 25px 20px;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+.nav_link img {
+  transform: translateY(-30%);
+}
+.nav_link:hover {
+  background-color: #1f1f1f;
+}
+@media (max-width: 1200px) {
+  .nav_link {
+    width: 100%;
+  }
+}
+
+.burger {
+  display: none;
+  height: 5px;
+  width: 40px;
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  background-color: #fff;
+  cursor: pointer;
+}
+.burger::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 3px;
+  top: -10px;
+  background-color: #fff;
+  height: 5px;
+  width: 40px;
+}
+.burger::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 3px;
+  bottom: -10px;
+  background-color: #fff;
+  height: 5px;
+  width: 40px;
+}
+@media (max-width: 1200px) {
+  .burger {
+    display: block;
+  }
+}
+
+.double__section {
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .double__section {
+    flex-direction: column;
+  }
+}
+
+.double__section__content {
+  padding: 100px 80px;
+  width: 54.1666666667%;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1200px) {
+  .double__section__content {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .double__section__content {
+    padding: 100px 40px;
+  }
+}
+
+.double__section__photo {
+  width: 45.8333333333%;
+}
+@media (max-width: 1200px) {
+  .double__section__photo {
+    width: 100%;
+  }
+}
+
+.section__header {
+  margin: 0 auto;
+}
+.section__header .section__title {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.section__header .section__title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: #fff;
+}
+.section__header .section__title.after50::after {
+  margin: 50px auto;
+}
+.section__header .section__title.after30::after {
+  margin: 30px auto;
+}
+.section__header .section__title.after40::after {
+  margin: 40px auto;
+}
+@media (max-width: 600px) {
+  .section__header .section__title {
+    font-size: 30px;
+  }
+}
+
+.section__button {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 12px 28px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  transition: color, background-color 0.2s, 0.2s;
+}
+.section__button:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+.section__text {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  max-width: 470px;
+}
+
+.section__receipts {
+  padding: 150px 20px;
+}
+
+.intro {
+  height: calc(100vh - 80px);
+  min-height: 810px;
+  background: url(../images/intro.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro__inner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 600px) {
+  .intro__inner {
+    padding: 20px;
+  }
+}
+
+.intro__logo {
+  margin-bottom: 80px;
+}
+@media (max-width: 400px) {
+  .intro__logo img {
+    width: 200px;
+  }
+}
+
+.intro__text {
+  max-width: 730px;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 400px) {
+  .intro__text {
+    max-width: 300px;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+@media (max-width: 1900px) {
+  .cards--flex {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 600px) {
+  .cards--flex {
+    margin-left: 0;
+  }
+}
+.cards--grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+@media screen and (max-width: 1300px) {
+  .cards--grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .cards--grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cards--grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  margin-bottom: 40px;
+}
+.card:not(:last-child) {
+  margin-right: 50px;
+}
+@media (max-width: 1900px) {
+  .card--flex:last-child {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 600px) {
+  .card--flex:not(:last-child) {
+    margin-right: 0;
+  }
+  .card--flex:last-child {
+    margin-right: 0;
+  }
+}
+.card--grid:not(:last-child) {
+  margin-right: 0;
+}
+
+.product__preview {
+  width: 260px;
+  height: 325px;
+  background: #191B1C;
+  position: relative;
+}
+.product__preview img {
+  position: absolute;
+  top: 17%;
+  right: 10%;
+  transition: transform 2s;
+}
+.product__preview img:hover {
+  transform: scale(1.3);
+}
+@media (max-width: 600px) {
+  .product__preview img {
+    right: 8%;
+  }
+}
+@media (max-width: 600px) {
+  .product__preview {
+    width: 240px;
+  }
+}
+
+.product__name {
+  font-family: "Playfair Display";
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+  margin: 25px 0 10px 0;
+  display: block;
+}
+
+.product__price {
+  font-family: "Playfair Display";
+  font-size: 16px;
+  line-height: 19px;
+  color: #D0D0D0;
+  display: block;
+}
+
+.new__collection {
+  padding: 100px;
+  background: url(../images/newCollection.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+@media (max-width: 400px) {
+  .new__collection {
+    padding: 60px;
+  }
+}
+
+.collection__photo {
+  background: url(../images/collection.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section__brands {
+  background: #0F0F0F;
+  padding: 60px;
+}
+
+.brands__content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.footer {
+  padding: 80px 20px 100px 20px;
+  background: url(../images/footerBG.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+@media (max-width: 1200px) {
+  .footer__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__item {
+  max-width: 350px;
+}
+
+.footer__title {
+  margin-bottom: 40px;
+  font-family: "Playfair Display";
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer__text {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #fff;
+  margin-bottom: 38px;
+}
+
+.footer__tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: #000;
+  padding: 10px 20px;
+  margin: 0 20px 20px 0;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: lowercase;
+  color: #D0D0D0;
+}
+
+.form__group {
+  display: flex;
+}
+@media (max-width: 600px) {
+  .form__group {
+    flex-direction: column;
+  }
+}
+
+.footer__input {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px 15px;
+  color: #fff;
+  border: none;
+  outline: 0;
+}
+.footer__input::placeholder {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #969696;
+}
+
+.footer__button {
+  background-color: #000;
+  padding: 10px 20px;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color, background-color 0.5s, 0.5s;
+  border: none;
+}
+.footer__button:hover {
+  color: #000;
+  background-color: #fff;
+}

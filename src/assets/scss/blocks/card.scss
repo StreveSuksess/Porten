@@ -1,0 +1,107 @@
+.cards{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    
+    @include breakpoint($big-bp) {
+        &--flex{
+            margin-left: 50px;
+        }
+    }
+    @include breakpoint($mobile-bp) {
+        &--flex{
+            margin-left: 0;
+        }
+    }
+
+    &--grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+
+        @media screen and (max-width: 1300px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media screen and (max-width: 1000px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.card{
+    margin-bottom: 40px;
+
+    &:not(:last-child){
+        margin-right: 50px;
+    }
+
+    @include breakpoint($big-bp) {
+        &--flex:last-child{
+            margin-right: 50px;
+        }
+    }
+    @include breakpoint($mobile-bp) {
+        &--flex:not(:last-child){
+            margin-right: 0;
+        }
+        &--flex:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &--grid:not(:last-child){margin-right: 0;}
+}
+
+.product__preview{
+
+    width: 260px;
+    height: 325px;
+    background: #191B1C;
+    position: relative;
+
+    img{
+        position: absolute;
+        top: 17%;
+        right: 10%;
+        
+        transition: transform 2s;
+
+        &:hover{
+            transform: scale(1.3);
+        }
+        @include breakpoint($mobile-bp) {
+            right: 8%;
+        }
+    }
+    @include breakpoint($mobile-bp) {
+        width: 240px;
+    }
+}
+
+.product__name{
+    font-family: 'Playfair Display';
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #FFFFFF;
+
+    margin: 25px 0 10px 0;
+
+    display: block;
+}
+
+.product__price{
+    font-family: 'Playfair Display';
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #D0D0D0;
+
+    display: block;
+}

@@ -1,0 +1,16 @@
+.new__collection{
+    padding: 100px;
+
+    background: url(/assets/images/newCollection.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    @include breakpoint($mobile-mini-bp) {
+        padding: 60px;
+    }
+
+}
